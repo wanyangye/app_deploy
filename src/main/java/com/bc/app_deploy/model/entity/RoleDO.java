@@ -13,7 +13,7 @@ public class RoleDO extends BaseDO {
     private Long id;
     private String name;
     private String description;
-    private String permissions;
+    private String permissionCode;
     @TableLogic
     private Integer deleted;
 }

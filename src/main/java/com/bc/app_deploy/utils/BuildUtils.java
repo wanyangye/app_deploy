@@ -406,7 +406,7 @@ public class BuildUtils {
                     
                     // 跳过当前进程（避免自杀）
                     if (pid == currentPid) {
-                        logConsumer.accept("[Clean] 跳过当前 MarsDeploy 进程: " + pid);
+                        logConsumer.accept("[Clean] 跳过当前 AppDeploy 进程: " + pid);
                         continue;
                     }
                     

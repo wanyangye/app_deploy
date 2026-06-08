@@ -3,11 +3,9 @@ package com.bc.app_deploy.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bc.app_deploy.model.entity.RoleDO;
-import com.bc.app_deploy.service.user.IRoleService;
+import com.bc.app_deploy.service.IRoleService;
 import com.bc.app_deploy.utils.Result;
 import jakarta.annotation.Resource;
-import org.apache.catalina.Role;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

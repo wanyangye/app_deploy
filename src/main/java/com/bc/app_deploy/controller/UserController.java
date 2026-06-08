@@ -5,13 +5,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bc.app_deploy.model.entity.RoleDO;
 import com.bc.app_deploy.model.entity.UserDO;
-import com.bc.app_deploy.service.user.IRoleService;
-import com.bc.app_deploy.service.user.IUserRoleService;
-import com.bc.app_deploy.service.user.IUserService;
+import com.bc.app_deploy.service.IUserRoleService;
+import com.bc.app_deploy.service.IUserService;
 import com.bc.app_deploy.utils.Result;
 import jakarta.annotation.Resource;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +25,6 @@ public class UserController {
     @Resource
     private IUserRoleService userRoleService;
 
-    @Resource
-    private IRoleService roleService;
 
     @GetMapping("/list")
     public Result<Page<UserDO>> list(
@@ -164,7 +159,7 @@ public class UserController {
 
             Map<String, Object> result = new HashMap<>();
             result.put("user", user);
-            result.put("permissions", roles.stream().map(RoleDO::getPermissions).toList());
+            result.put("permissions", roles.stream().map(RoleDO::getPermissionCode).toList());
 
             return Result.success(result);
         }

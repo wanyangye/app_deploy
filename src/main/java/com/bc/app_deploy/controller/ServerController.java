@@ -3,21 +3,18 @@ package com.bc.app_deploy.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bc.app_deploy.model.entity.ServerDO;
-import com.bc.app_deploy.service.system.IProjectServerService;
-import com.bc.app_deploy.service.system.IServerService;
+import com.bc.app_deploy.service.IServerService;
 import com.bc.app_deploy.utils.Result;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/server")
 public class ServerController {
 
-    @Autowired
+    @Resource
     private IServerService serverService;
 
-    @Autowired
-    private IProjectServerService projectServerService;
 
     @GetMapping("/list")
     public Result<Page<ServerDO>> list(

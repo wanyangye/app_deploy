@@ -43,7 +43,7 @@ public class MenuDO extends BaseDO {
     /**
      * 路由类型：1-主菜单/目录，2-页面，3-按钮
      */
-    private Integer menuType;
+    private Integer type;
 
     /**
      * 权限标识 (按钮类型使用，如 sys:user:add)
@@ -55,8 +55,7 @@ public class MenuDO extends BaseDO {
      */
     private Integer isHidden;
 
-    @TableLogic
-    private Integer deleted;
+
 
     /**
      * 子菜单列表（非数据库字段）
